@@ -64,6 +64,7 @@ namespace WebAPI.Controllers
             employee.FirstName = updatedEmployee.FirstName;
             employee.LastName = updatedEmployee.LastName;
             employee.Email = updatedEmployee.Email;
+            employee.Age = updatedEmployee.Age;
             employee.PhoneNo = updatedEmployee.PhoneNo;
             employee.Salary = updatedEmployee.Salary;
             employee.Department = updatedEmployee.Department;

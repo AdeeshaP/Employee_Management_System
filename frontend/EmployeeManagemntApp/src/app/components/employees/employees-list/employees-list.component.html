@@ -9,6 +9,7 @@
                 <th>Phone No</th>
                 <th>Salary</th>
                 <th>Department</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -19,6 +20,9 @@
                 <td>{{ emp.phoneNo }}</td>
                 <td>{{ emp.salary }}</td>
                 <td>{{ emp.department }}</td>
+                <td>
+                    <a [routerLink]="['/employees', 'edit', emp.id]">View</a>
+                </td>
             </tr>
         </tbody>
     </table>
