@@ -1,9 +1,9 @@
 <div class="container my-5">
-    <h1 class="mb-3">Edit Employee</h1>
+    <h1 class="mb-3">Delete Employee</h1>
 
     <div class="row">
         <div class="col-6">
-            <form #form="ngForm" (ngSubmit)="updateEmployee()">
+            <form #form="ngForm">
                 <div class="mb-3">
                     <label for="id" class="form-label">ID</label>
                     <input type="text" class="form-control" id="id" name="id" [(ngModel)]="empDetails.id" readonly />
@@ -38,10 +38,9 @@
                     <label for="department" class="form-label">Department</label>
                     <input type="text" class="form-control" id="department" name="department" [(ngModel)]="empDetails.department" />
                 </div>
-                <button type="submit" class="btn btn-primary">Update</button>&nbsp;
-                <!-- <button type="button" class="btn btn-danger" (click)="deleteEmployee(empDetails.id)">
+                <button type="button" class="btn btn-danger" (click)="deleteEmployee(empDetails.id)">
           Delete
-        </button> -->
+        </button>
             </form>
         </div>
     </div>

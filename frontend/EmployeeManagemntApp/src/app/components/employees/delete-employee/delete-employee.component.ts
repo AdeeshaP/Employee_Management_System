@@ -4,22 +4,23 @@ import { Employee } from 'src/app/models/employee.model';
 import { EmployeesService } from 'src/app/services/employees.service';
 
 @Component({
-  selector: 'app-update-employee',
-  templateUrl: './update-employee.component.html',
-  styleUrls: ['./update-employee.component.css']
+  selector: 'app-delete-employee',
+  templateUrl: './delete-employee.component.html',
+  styleUrls: ['./delete-employee.component.css']
 })
-export class UpdateEmployeeComponent implements OnInit {
+export class DeleteEmployeeComponent implements OnInit {
 
   empDetails : Employee = {
-      id: '',
-      firstName:'',
-      lastName:'',
-      email:'',
-      age:0,
-      phoneNo:0,
-      salary:0,
-      department: '',
-  }
+    id: '',
+    firstName:'',
+    lastName:'',
+    email:'',
+    age:0,
+    phoneNo:0,
+    salary:0,
+    department: '',
+}
+
   constructor(private route: ActivatedRoute, private empService : EmployeesService, private router: Router) { }
 
   ngOnInit(): void {
@@ -40,13 +41,12 @@ export class UpdateEmployeeComponent implements OnInit {
     })
   }
 
-  updateEmployee(){
-    this.empService.updateEmployee(this.empDetails.id, this.empDetails).subscribe({
-      next : (resp) => {
+  deleteEmployee(id : string) {
+    this.empService.deleteEmployee(id).subscribe( {
+      next : (response) => {
         this.router.navigate(['employees']);
       }
-    });
+    })
   }
 
- 
 }
