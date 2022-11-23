@@ -48,4 +48,11 @@ export class UpdateEmployeeComponent implements OnInit {
     });
   }
 
+  deleteEmployee(id : string) {
+    this.empService.deleteEmployee(id).subscribe( {
+      next : (response) => {
+        this.router.navigate(['employees']);
+      }
+    })
+  }
 }
